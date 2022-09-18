@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box,
         Grid,
         Button, 
@@ -12,14 +12,11 @@ import Logo from '../assets/logo192.png'
 
 export default function Navbar() {
 
-    const { colorMode, toggleColorMode } = useColorMode()
-
-    
-
+    const { colorMode, toggleColorMode } = useColorMode();
 
     return (
         <div>
-            <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5}>
+            <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5} >
 
                  {/* Logo */}
                 <Box position='absolute' display='inline' ml={10}>
@@ -27,16 +24,16 @@ export default function Navbar() {
                 </Box>
 
                 {/* Button to toggle theme */}
-                <Box position='absolute' display='inline' ml='85%'>
-                <Button size='md' onClick={toggleColorMode}>
-                    {colorMode === 'light' ? <SunIcon/> : <MoonIcon />}
+                <Box position='absolute'  display='inline' ml='85%'>
+                <Button size='sm' variant={{ md: 'md' }} onClick={toggleColorMode}  >
+                    {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
                 </Button>
                 </Box>
                     
                 {/* Hamburger menu */}    
-                <Box position='absolute' display='inline' ml='90%'>
+                <Box position='absolute' display='inline' ml='90%' >
                     <Menu>
-                        <MenuButton as={Button} rightIcon={<HamburgerIcon />}>
+                        <MenuButton as={Button} size='sm' variant={{ md: 'md' }}  rightIcon={<HamburgerIcon />}>
                         </MenuButton>
                         <MenuList>
                             <MenuItem>Home</MenuItem>
