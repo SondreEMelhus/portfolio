@@ -7,7 +7,9 @@ import { Box,
         MenuList,
         MenuItem,
         useColorMode,
-        IconButton } from "@chakra-ui/react";
+        IconButton, } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
+import { Link as ReachLink } from "react-router-dom";
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import Logo from '../assets/logo192.png'
 
@@ -36,10 +38,18 @@ export default function Navbar() {
                         <MenuButton as={IconButton} size='lg' variant={{ sm: 'sm', md: 'md' }} pr={6} pl={6}  icon={<HamburgerIcon />} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Home</MenuItem>
-                            <MenuItem>About</MenuItem>
-                            <MenuItem>Work</MenuItem>
-                            <MenuItem>Contact</MenuItem>
+                            <MenuItem>
+                                <Link as={ReachLink} to='/'>Home</Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link as={ReachLink} to='/about'>About</Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link as={ReachLink} to='/work'>Work</Link>
+                            </MenuItem>
+                            <MenuItem>
+                                <Link as={ReachLink} to='/contact'>Contact</Link>
+                            </MenuItem>
                         </MenuList>
                     </Menu>
                 </Box>
