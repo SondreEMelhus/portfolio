@@ -2,9 +2,10 @@ import './App.css';
 
 //External packages
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { ChakraProvider } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react';
 
 //Router components
+import Home from './components/Home';
 import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
@@ -13,20 +14,16 @@ import Contact from './components/Contact'
 function App() {
   return (
     <Router>
-      <ChakraProvider>
+      <Box>
         <div className="App">
-          <header className="App-header">
-            
-          </header>
-          <div>
             <Routes>
-              <Route path="/" element={<About/>} />
-              <Route path="/translator" element={<Work />} />
-              <Route path="/profile" element={<Contact />} />
+              <Route path="/" element={<Home/>} />
+              <Route path="/about" element={<About/>} />
+              <Route path="/work" element={<Work />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
-        </div>
-      </ChakraProvider>
+        </Box>
     </Router>
   );
 }
