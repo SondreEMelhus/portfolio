@@ -6,7 +6,8 @@ import { Box,
         MenuButton,
         MenuList,
         MenuItem,
-        useColorMode } from "@chakra-ui/react";
+        useColorMode,
+        IconButton } from "@chakra-ui/react";
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import Logo from '../assets/logo192.png'
 
@@ -14,26 +15,25 @@ export default function Navbar() {
 
     const { colorMode, toggleColorMode } = useColorMode();
 
+        //variant={{ md: 'md' }} 
     return (
         <div>
             <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5} >
 
                  {/* Logo */}
-                <Box position='absolute' display='inline' ml={10}>
+                <Box  ml='10%' mr='auto' w='100%' border='1px' borderColor='gray.200'>
                     <img src={Logo} width='50vx' height='50vx' alt='logo'/>
                 </Box>
 
-                {/* Button to toggle theme */}
-                <Box position='absolute'  display='inline' ml='85%'>
-                <Button size='sm' variant={{ md: 'md' }} onClick={toggleColorMode}  >
-                    {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
-                </Button>
-                </Box>
+               
                     
                 {/* Hamburger menu */}    
-                <Box position='absolute' display='inline' ml='90%' >
+                <Box ml='auto' mr='10%' w={200}>
+                    <Button size='lg' variant={{ sm: 'sm', md: 'md' }}  onClick={toggleColorMode} mr={5} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
+                        {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
+                    </Button>
                     <Menu>
-                        <MenuButton as={Button} size='sm' variant={{ md: 'md' }}  rightIcon={<HamburgerIcon />}>
+                        <MenuButton as={IconButton} size='lg' variant={{ sm: 'sm', md: 'md' }} pr={6} pl={6}  icon={<HamburgerIcon />} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
                         </MenuButton>
                         <MenuList>
                             <MenuItem>Home</MenuItem>
