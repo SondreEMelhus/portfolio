@@ -7,9 +7,11 @@ import { Box,
         MenuList,
         MenuItem,
         useColorMode,
-        IconButton, } from "@chakra-ui/react";
+        IconButton,
+        Heading, } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/react";
 import { Link as ReachLink } from "react-router-dom";
+
 import { HamburgerIcon, SunIcon, MoonIcon } from '@chakra-ui/icons';
 import Logo from '../assets/logo192.png'
 
@@ -17,7 +19,6 @@ export default function Navbar() {
 
     const { colorMode, toggleColorMode } = useColorMode();
 
-        //variant={{ md: 'md' }} 
     return (
         <div>
             <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5} >
@@ -25,13 +26,15 @@ export default function Navbar() {
                  {/* Logo */}
                 <Box  flex={1} align="left" ml={10}>
                     <img src={Logo} width='50vx' height='50vx' alt='logo'/>
+                    <Box  flex={1} align="left" ml={10}>
+                        <Heading>Sondre Melhus</Heading>
+                    </Box>
                 </Box>
 
-               
                 
                 {/* Hamburger menu  ml='auto' mr='10%' w={200}*/}    
                 <Box flex={1} align="right" mr={10}>
-                    <Button size='lg' variant={{ sm: 'sm', md: 'md' }}  onClick={toggleColorMode} mr={5} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
+                    <Button size='lg' variant={{ sm: 'sm', md: 'md' }} onClick={toggleColorMode} mr={5} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
                         {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
                     </Button>
                     <Menu>
@@ -42,7 +45,7 @@ export default function Navbar() {
                                 <Link as={ReachLink} to='/'>Home</Link>
                             </MenuItem>
                             <MenuItem>
-                                <Link as={ReachLink} to='/about'>About</Link>
+                                <Link Link as={ReachLink} to='/about'>About</Link>
                             </MenuItem>
                             <MenuItem>
                                 <Link as={ReachLink} to='/work'>Work</Link>
