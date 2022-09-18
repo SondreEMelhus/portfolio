@@ -19,6 +19,7 @@ export default function Navbar() {
 
     const { colorMode, toggleColorMode } = useColorMode();
 
+
     return (
         <div>
             <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5} >
@@ -27,7 +28,7 @@ export default function Navbar() {
                 <Box  flex={1} align="left" ml={10}>
                     <img src={Logo} width='50vx' height='50vx' alt='logo'/>
                     <Box  flex={1} align="left" ml={10}>
-                        <Heading>Sondre Melhus</Heading>
+                        <Heading as='h3' size='lg'>Sondre Melhus</Heading>
                     </Box>
                 </Box>
 
@@ -37,6 +38,7 @@ export default function Navbar() {
                     <Button size='lg' variant={{ sm: 'sm', md: 'md' }} onClick={toggleColorMode} mr={5} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
                         {colorMode === 'light' ? <SunIcon /> : <MoonIcon />}
                     </Button>
+
                     <Menu>
                         <MenuButton as={IconButton} size='lg' variant={{ sm: 'sm', md: 'md' }} pr={6} pl={6}  icon={<HamburgerIcon />} border='1px' borderColor={colorMode === 'light' ? 'gray.600': 'gray.200'}>
                         </MenuButton>
@@ -55,6 +57,7 @@ export default function Navbar() {
                             </MenuItem>
                         </MenuList>
                     </Menu>
+                    
                 </Box>
             </Grid>
         </div>
