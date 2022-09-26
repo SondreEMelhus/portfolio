@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Heading, useColorMode } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-import Navbar from "./Navbar";
+import Navbar from "./navbar/Navbar";
 
  
 export default function About () {
@@ -30,12 +30,12 @@ export default function About () {
                 }
             }}
             >
-            <Box w='70%' bg={colorMode === 'light' ? '#70C3FF': '#F6511D'} color='black' border='2px' borderColor={colorMode === 'light' ? '#70C3FF': '#F6511D'} borderRadius='5px' fontSize='md' pt={5} pb={5} ml='auto' mr ='auto' mt='5%'>
+            <Box w='85%' bg={colorMode === 'light' ? '#70C3FF': '#F6511D'} color='black' border='2px' borderColor={colorMode === 'light' ? '#70C3FF': '#F6511D'} borderRadius='5px' fontSize='md' pt={5} pb={5} ml='auto' mr ='auto' mt='5%'>
                 <Heading>About</Heading>
                 <Box mt={20} background={colorMode === 'light' ? 'light' : 'dark'}>
                     <p>My name is Sondre Melhus, and Im a {new Date().getFullYear() - 1997} year old full-stack developer from Bergen, Norway.</p>
                 </Box>
-                </Box>
+            </Box>
             </motion.div>
         </div>
     )

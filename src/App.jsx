@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Box } from '@chakra-ui/react';
 
 //Router components
-import Home from './components/Home';
+import Home from './components/home/Home'
 import About from './components/About'
 import Work from './components/Work'
 import Contact from './components/Contact'
