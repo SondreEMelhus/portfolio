@@ -7,12 +7,12 @@ import Logo from '../../assets/logo192.png'
 import NavbarDropdown from './NavbarDropdown';
 import NavbarThemeToggler from "./NavbarThemeToggler";
 
-export default function Navbar() {
+export default function Navbar({ children }) {
 
 
     return (
-        <div>
-            <Grid display="grid" gridGap={2} gridAutoFlow="column" mt={5} >
+        <>
+            <Grid display="grid" position="sticky" top={0} gridGap={2} gridAutoFlow="column" mt={5} backdropFilter='auto' backdropBlur='10px'>
 
                  {/* Logo */}
                 <Box  flex={1} align="left" ml={10}>
@@ -33,6 +33,9 @@ export default function Navbar() {
                     </grid>
                 </Box>
             </Grid>
-        </div>
+            <div >
+                { children }
+            </div>
+        </>
     )
 }

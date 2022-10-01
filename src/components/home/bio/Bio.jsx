@@ -22,11 +22,11 @@ export default function Bio () {
             }],
             [{
                 year: 2022,
-                description: 'Finished Bachelors degree with a specialisation in Software development'
+                description: 'Finished Bachelors degree with a specialization in Software development'
             }],
             [{
                 year: 'Presently',
-                description: 'Working as a Full-stack developer for Experis Academy Norway, in Bergen'
+                description: 'Working as a Full-stack developer for Experis Academy Norway'
             }]
         ];
 
@@ -38,7 +38,7 @@ export default function Bio () {
                 {
                     bioArray.map((row, index) => {
                         return (
-                        <BioRow key={index + '_' + row + 2} events={row} />
+                        <BioRow key={index + '_' + row + 2} events={row} mt={5}/>
                     )})
                 }
             </Grid>          

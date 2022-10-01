@@ -24,9 +24,6 @@ export default function NavbarDropdown () {
                     <Link as={ReachLink} to='/'>Home</Link>
                 </MenuItem>
                 <MenuItem>
-                    <Link Link as={ReachLink} to='/about'>About</Link>
-                </MenuItem>
-                <MenuItem>
                     <Link as={ReachLink} to='/work'>Work</Link>
                 </MenuItem>
                 <MenuItem>
