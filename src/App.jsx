@@ -6,9 +6,9 @@ import { Box } from '@chakra-ui/react';
 
 //Router components
 import Home from './components/home/Home'
-import About from './components/About'
-import Work from './components/Work'
-import Contact from './components/Contact'
+import Work from './components/work/Work'
+import Contact from './components/contact/Contact'
+import Navbar from './components/navbar/Navbar';
 
 
 function App() {
@@ -16,14 +16,15 @@ function App() {
     <Router>
       <Box>
         <div className="App">
+          <Navbar>
             <Routes>
               <Route path="/" element={<Home/>} />
-              <Route path="/about" element={<About/>} />
               <Route path="/work" element={<Work />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </div>
-        </Box>
+          </Navbar>
+        </div>
+      </Box>
     </Router>
   );
 }
